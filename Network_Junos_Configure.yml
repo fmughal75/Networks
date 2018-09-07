@@ -7,7 +7,7 @@
     rtr3_public_ip: "{{hostvars['rtr3']['ansible_host']}}"
     rtr4_public_ip: "{{hostvars['rtr4']['ansible_host']}}"
   tasks:
-  - name: for idempotency, use full-form commands
+  - name: Set Config on Juniper Router
     junos_config:
       lines:
         - set interfaces ge-0/0/1 unit 0 description "Test interface"
